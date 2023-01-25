@@ -23,7 +23,7 @@ export default function Home({ data }) {
       </header>
       <main className={styles.main}>
         {data.map(ev => ( 
-        <a key={ev.id} href={`/events/${ev.id}`}> <Image width={200} height={200} alt={ev.title} src={ev.image}/> <h2> {ev.title} </h2> <p> {ev.description} </p> </a>))}
+        <a key={ev.id} href={`/events/${ev.id}`}> <Image width={300} height={300} alt={ev.title} src={ev.image}/> <h2> {ev.title} </h2> <p> {ev.description} </p> </a>))}
 
       </main>
       <footer className={styles.footer}>

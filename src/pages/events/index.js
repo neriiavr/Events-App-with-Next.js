@@ -1,27 +1,32 @@
-const EventsPage = () => {
+import Image from 'next/image'
+
+const EventsPage = ({data}) => {
 
     return (
         <div>
             <h1>Events</h1>
             <div>
-            <a href=''>
-        <img />
-        <h2>Events in Berlin</h2>
-
-       </a>
-       <a href=''>
-        <img />
-        <h2>Events in San Francisco</h2>
-
-       </a>
-       <a href=''>
-        <img />
-        <h2>Events in Barcelona</h2>
-
-       </a>
+            {data.map((ev) => (
+                <a key={ev.id} href={`/events/${ev.id}`}>
+                    <Image src={ev.image} alt={ev.title} width={300} height={300} />
+                    <h2>{ev.title}</h2></a>
+            ))}
             </div>
         </div>
     )
 }
 
 export default EventsPage;
+
+
+//now next.js will statically pre-render all the paths specified by getStaticPaths
+//can place it above or below page, cant be nested in another function 
+export async function getStaticProps () {
+    const { events_categories } = await import('/data/data.json')
+
+    return {
+        props: {
+            data: events_categories,
+        }
+    }
+}

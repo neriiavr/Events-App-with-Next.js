@@ -1,20 +1,26 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { Fragment } from 'react';
 
-const EventsCatPage = ({data}) => {
+const EventsCatPage = ({data, pageName}) => {
     const generateEventUrl = (event) => {
         return `/events/${ev.city}/${ev.id}`;
     }
 
+// LINKS next.js will create each Link pages, every time we use the link component we're pointing into
+// internal page, a page we have in the pages folder  
     return (
         <div>
-            <h1>Events In London</h1>
+            <h1>Events In {pageName}</h1>
             <div>
-            {data.map(ev => (
-                <a key={ev.id} href={generateEventUrl(ev)}>
-                    <Image src={ev.image} alt={ev.title} width={300} height={300} />
-                    <h2>{ev.title}</h2>
-                    <p>{ev.description}</p>
-                </a>
+            {data.map((ev) => (
+                <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} passHref>
+                    <Fragment>
+                        <Image src={ev.image} alt={ev.title} width={300} height={300} />
+                        <h2>{ev.title}</h2>
+                        <p>{ev.description}</p>
+                    </Fragment>
+                </Link>
             ))}
 
             </div>  
@@ -50,5 +56,5 @@ export async function getStaticProps(context) {
 
     const data = allEvents.filter(ev => ev.city === id)
 
-    return { props: {data}};
+    return { props: {data, pageName: id }};
 }

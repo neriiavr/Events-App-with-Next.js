@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const EventsPage = ({data}) => {
+function EventsPage ({data}) {
 
     return (
         <div>

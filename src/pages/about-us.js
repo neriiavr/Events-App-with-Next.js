@@ -2,7 +2,7 @@ const AboutUsPage = () => {
     return (
         <div>
             <h1>About us page</h1>
-            <p> "At vero eos et accusamus et iusto odio dignissimos ducimus 
+            <p> At vero eos et accusamus et iusto odio dignissimos ducimus 
                 qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
                 dolores et quas molestias excepturi sint occaecati cupiditate non 
                 provident, similique sunt in culpa qui officia deserunt mollitia 
@@ -12,7 +12,7 @@ const AboutUsPage = () => {
                 facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
                  Temporibus autem quibusdam et aut officiis debitis aut rerum 
                  necessitatibus saepe eveniet ut et voluptates repudiandae sint et 
-                 molestiae non recusandae."
+                 molestiae non recusandae.
              </p>
         </div>
     )

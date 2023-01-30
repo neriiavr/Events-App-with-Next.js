@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Fragment } from 'react';
 
-const EventsCatPage = ({data, pageName}) => {
+function EventsCatPage ({data, pageName}) {
     const generateEventUrl = (event) => {
         return `/events/${ev.city}/${ev.id}`;
     }
@@ -15,14 +14,13 @@ const EventsCatPage = ({data, pageName}) => {
             <div>
             {data.map((ev) => (
                 <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} passHref>
-                    <Fragment>
+                    <>
                         <Image src={ev.image} alt={ev.title} width={300} height={300} />
                         <h2>{ev.title}</h2>
                         <p>{ev.description}</p>
-                    </Fragment>
+                    </>
                 </Link>
             ))}
-
             </div>  
         </div>  
     )

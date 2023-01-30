@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const EventPage = ({ data }) => {
+function EventPage ({ data }) {
     return (
         <div>
             <Image src={data.image} width={1000} height={500} alt={data.title} />

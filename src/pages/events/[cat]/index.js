@@ -11,6 +11,7 @@ function EventsCatPage ({data, pageName}) {
     return (
         <div>
             <h1>Events In {pageName}</h1>
+            
             <div>
             {data.map((ev) => (
                 <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} passHref>

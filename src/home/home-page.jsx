@@ -2,20 +2,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 function HomePage ({data}) {
-  <div className="home_body">
-  </div>
   return(
-    <main>
-    {data.map((ev) => (
-    <Link className='card' key={ev.id} href={`/events/${ev.id}`} passHref>
-      <>
-        <Image width={300} height={300} alt={ev.title} src={ev.image}/>
-        <h2> {ev.title} </h2>
-        <p> {ev.description} </p> 
-      </>
-    </Link>
+  <div className="home_body">
+    {data?.map((ev) => (
+      <Link key={ev.id} href={`/events/${ev.id}`} passHref>
+        <div className="card">
+          <div className="image">
+            <Image width={600} height={400} alt={ev.title} src={ev.image} />
+          </div>
+          <div className="content">
+            <h2> {ev.title} </h2>
+            <p> {ev.description} </p>
+          </div>
+        </div>
+      </Link>
     ))}
-  </main>);
-}
+  </div>
+)};
 
 export default HomePage;

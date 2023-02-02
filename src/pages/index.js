@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '@/styles/Home.module.css';
 import Link from 'next/link';
 import HomePage from '../home/home-page';
-
 
 export default function Home({ data }) {
   return (
@@ -17,10 +15,9 @@ export default function Home({ data }) {
       </Head>
         
       <HomePage data={data} />
-    
     </div>
 
-      <main className={styles.main}>
+      <main>
         {data.map((ev) => (
         <Link key={ev.id} href={`/events/${ev.id}`} passHref>
           <>

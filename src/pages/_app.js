@@ -7,8 +7,6 @@ export default function App({ Component, pageProps }) {
   console.log('text');
   return (
   <>
-  <Head>
-  </Head>
   <MainLayout>
     <Component {...pageProps} />
   </MainLayout>

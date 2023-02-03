@@ -27,7 +27,7 @@ function Header () {
                     </ul>
                 </nav>    
             </div>
-            <h1>Quis autem vel eum iure reprehenderit qui </h1>
+            <p className='title'>Quis autem vel eum iure reprehenderit qui </p>
             </div>
         </header>
     );

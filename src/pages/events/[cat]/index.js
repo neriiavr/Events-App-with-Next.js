@@ -1,31 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import CatEvent from '@/events/catEvent';
 
-function EventsCatPage ({data, pageName}) {
-    const generateEventUrl = (event) => {
-        return `/events/${ev.city}/${ev.id}`;
-    }
+const EventsCatPage = ({data, pageName}) => <CatEvent data={data} pageName={pageName} />
 
-// LINKS next.js will create each Link pages, every time we use the link component we're pointing into
-// internal page, a page we have in the pages folder  
-    return (
-        <div>
-            <h1>Events In {pageName}</h1>
-            
-            <div>
-            {data.map((ev) => (
-                <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} passHref>
-                    <>
-                        <Image src={ev.image} alt={ev.title} width={300} height={300} />
-                        <h2>{ev.title}</h2>
-                        <p>{ev.description}</p>
-                    </>
-                </Link>
-            ))}
-            </div>  
-        </div>  
-    )
-}
 
 export default EventsCatPage;
 

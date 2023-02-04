@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 const SingleEvent = ({data}) => {
+
   return (
     <div>
     <h1> {data.title} </h1>

@@ -1,7 +1,10 @@
 import SingleEvent from '@/events/single-event';
 
+const EventPage = ({ data }) => {
+    console.log(data)
 
-const EventPage = ({ data }) => <SingleEvent data={data} />;
+    return <SingleEvent data={data} />
+};
 
 export default EventPage;
 
@@ -28,7 +31,6 @@ export async function getStaticProps(context) {
     const id = context.params.id;
     const {allEvents} = await import ('/data/data.json');
     const eventData = allEvents.find((ev) => id === ev.id); 
-    
 
     return {
         props: { data: eventData},
